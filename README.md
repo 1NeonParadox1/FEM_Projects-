@@ -1,102 +1,48 @@
 # FEM Projects
 
-A growing portfolio of finite element analysis (FEA) and structural mechanics projects, focused on aerospace applications.
+A growing portfolio of finite element analysis (FEA) projects, primarily focused on structural mechanics and aerospace applications.
 
-This repository documents a progression from fundamental finite element modelling to advanced structural analysis. Work will be added as concepts are learned, implemented, and verified.
+This repository is designed to hold **multiple independent projects**. Each project gets its own folder, report, files, and progress tracker. Projects will progress from foundational FEA to more advanced methods as they are learned and verified.
 
-> **Status:** Learning roadmap in progress. Planned topics are not claims of completed work; results will be added only after the corresponding analysis has been performed and checked.
+> **Current focus:** Aerospace Structural Bracket — static analysis first, followed by mesh verification, fatigue, fracture mechanics, nonlinear FEA, and optimization. Future projects can be added alongside it.
 
-## Roadmap
-
-### 01 — Static Structural Analysis
-- Prepare a parametric aerospace-style bracket model.
-- Define material properties, loads, supports, and boundary conditions.
-- Run a static analysis and inspect displacement, stress, and reactions.
-- Document assumptions, units, and limitations.
-
-### 02 — Mesh Convergence and Verification
-- Compare coarse, medium, and fine meshes.
-- Track relevant outputs while accounting for stress singularities.
-- Check force equilibrium and compare simplified cases with hand calculations.
-- Document numerical sensitivity and limitations.
-
-### 03 — Fatigue Analysis
-- Define a documented cyclic load case and stress ratio.
-- Use traceable material S–N data.
-- Estimate fatigue life and damage with an appropriate method.
-- Investigate sensitivity to loading assumptions.
-
-### 04 — Fracture Mechanics and Damage Tolerance
-- Define a hypothetical crack geometry and assumptions.
-- Calculate stress intensity using an appropriate geometry factor.
-- Compare with suitable fracture-toughness data where valid.
-- Explore crack-growth estimates only when reliable material constants and loading data are available.
-
-### 05 — Nonlinear FEA
-- Study geometric nonlinearity and large-displacement behaviour.
-- Introduce material nonlinearity, such as elastoplasticity, using documented data.
-- Explore nonlinear contact where relevant.
-- Compare nonlinear and linear results and explain their differences.
-
-### 06 — Structural Design and Optimization
-- Compare design variables such as thickness, fillets, or reinforcement.
-- Evaluate mass, stress, deformation, and durability measures.
-- Document constraints and design trade-offs.
-- Explore parameter-based optimization after model verification.
-
-### 07 — Advanced FE Methods
-Topics for later study:
-- Implicit versus explicit solution methods.
-- Substructuring and component-level modelling.
-- Global-to-detailed FEM load transfer and boundary-condition continuity.
-- Material damage and failure models.
-- Nastran fundamentals and DMAP concepts.
-
-These are future learning goals, not current proficiency claims. Nastran/DMAP is a specialised workflow that requires study beyond the ANSYS bracket model.
-
-## Planned repository structure
+## Repository layout
 
 ```text
 FEM_Projects-/
 ├── README.md
-├── 01_Static_Structural_Analysis/
-├── 02_Mesh_Convergence/
-├── 03_Fatigue_Analysis/
-├── 04_Fracture_Mechanics/
-├── 05_Nonlinear_FEA/
-├── 06_Structural_Optimization/
-└── 07_Advanced_FE_Methods/
+├── projects/
+│   └── 01_Aerospace_Structural_Bracket/
+│       ├── README.md
+│       ├── CAD/
+│       ├── ANSYS/
+│       ├── Calculations/
+│       ├── Results/
+│       └── References/
+├── resources/       # Shared notes, equations, and learning references (as needed)
+└── templates/       # Reusable report/checklist templates (as needed)
 ```
 
-Each completed study can include:
-- `README.md`: objective, theory, assumptions, setup, results, and limitations.
-- `CAD/`: source geometry and suitable neutral exports.
-- `ANSYS/`: manageable solver/project files, subject to file-size constraints.
-- `Calculations/`: hand calculations or verification scripts.
-- `Results/`: plots, screenshots, tables, and exported data.
-- `References/`: material datasheets, standards, papers, and other sources.
+## Current project
 
-Use only the subfolders needed for each study. Avoid committing temporary solver files, very large generated data, licensed software, or confidential information.
+### [01 — Aerospace Structural Bracket](projects/01_Aerospace_Structural_Bracket/README.md)
 
-## Verification checklist
+A progressive structural-analysis case study of an aerospace-style bracket. It begins with a basic static structural model in ANSYS Mechanical and grows toward fatigue, fracture mechanics, nonlinear analysis, and design optimization.
 
-For every completed study:
-1. State the objective, units, assumptions, and load case.
-2. Identify material-data sources and applicability.
-3. Document geometry idealisations, contacts, supports, and loads.
-4. Check equilibrium and perform appropriate independent calculations.
-5. Report mesh sensitivity and investigate singularities.
-6. Separate solver output from engineering interpretation.
-7. State limitations and avoid calling an unverified result validated.
+## Planned progression
 
-## Progress tracker
+1. **Static structural analysis** — geometry, material properties, loads, supports, stress, and deformation.
+2. **Verification and mesh convergence** — mesh sensitivity, equilibrium checks, and hand-calculation comparisons.
+3. **Fatigue** — cyclic loading and S–N-based life estimation using documented material data.
+4. **Fracture mechanics** — crack sensitivity, stress intensity, and damage-tolerance fundamentals.
+5. **Nonlinear FEA** — geometric/material nonlinearity and contact where appropriate.
+6. **Design comparison and optimization** — evaluate mass and structural performance across variants.
+7. **Advanced FE methods** — learn implicit/explicit methods, substructuring, global-to-detailed load transfer, and Nastran/DMAP fundamentals.
 
-- [ ] Static structural baseline
-- [ ] Mesh convergence and verification
-- [ ] Fatigue analysis
-- [ ] Fracture mechanics / damage tolerance
-- [ ] Nonlinear FEA
-- [ ] Structural design comparison / optimization
-- [ ] Advanced FE methods study
+These are planned learning stages, not claims that the analyses or tools have already been mastered. The project documentation will distinguish completed work from future plans.
 
-Update this checklist only when each milestone is completed. The goal is a transparent learning process with reproducible engineering work and increasing technical depth.
+## Documentation principles
+
+Every project should explain its objective, assumptions, units, material-data sources, model setup, verification, results, and limitations. Large solver files may be stored separately when necessary; do not commit licensed software or confidential data.
+
+New projects should receive their own numbered folder under `projects/`, with a dedicated README describing the question, method, status, and deliverables.
